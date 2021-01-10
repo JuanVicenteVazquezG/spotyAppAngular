@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="row row-cols-1 row-cols-md-3 g-4 my-2">
+    <div *ngFor="let newsong of newSongs" class="mx-1 card h-100">
+        <img [src]="newsong.images[0].url" class="card-img-top py-2" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ newsong.name }}</h5>
+            <p class="card-text">
+                <span *ngFor="let artist of newsong.artists" class="badge rounded-pill bg-primary">
+                    {{ artist.name }}
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
