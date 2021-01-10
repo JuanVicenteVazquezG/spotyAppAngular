@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
   public token =
-    'Bearer BQB4mAQ0T8cfcmiDqBipKZ-qT5RLmdDUQYJ1vQjBeX1fCT28uKCwBxP1ctnHXj1KFEoKnl3GS1tJ6pQsX-s';
+    'Bearer BQCc075CJNJGPhL81yOVLTl3S5DCafDRb2I118hO9Fus2xL6vNGrvVNZjIBHP6uojJgbghuA0-VYjreWo1s';
   constructor(private http: HttpClient) {
     console.log('Spotify Service ready!');
   }
@@ -21,15 +21,15 @@ export class SpotifyService {
     return this.http.get(url, { headers });
   };
 
-  getNewReleases(): Observable<any> {
+  getNewReleases(): any {
     return this.getQuery('browse/new-releases/?limit=20').pipe(
-      map((_) => _.albums.items)
+      map((_) => _['albums'].items)
     );
   }
 
-  getArtist(term: string): Observable<any> {
+  getArtist(term: string): any {
     return this.getQuery(`search?q=${term}&type=artist&limit=15`).pipe(
-      map((_) => _.artists.items)
+      map((_) => _['artists'].items)
     );
   }
 }

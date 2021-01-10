@@ -1,12 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'noimage'
+  name: 'noimage',
 })
 export class NoimagePipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(images: any[]): string {
+    return images.length > 0 ? images[0].url : 'assets/img/noimage.png';
   }
-
 }
