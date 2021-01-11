@@ -1,5 +1,5 @@
 <app-loading *ngIf="loadingArtist"></app-loading>
-<div *ngIf="!loading" class="row animated fadeIn" mt-5>
+<div *ngIf="!loadingArtist" class="row animated fadeIn" mt-5>
     <div class="col-2 mt-5">
         <img [src]="artist.images | noimage" alt="artist.name" class="img-thumbnail img-circle" />
     </div>
@@ -13,5 +13,27 @@
     </div>
     <div class="col-4 text-right mt-5">
         <button routerLink="/search" class="btn btn-outline-danger">Back</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table text-light mt-5">
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>Album</th>
+                    <th>Song</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of topTracks">
+                    <td><img class="img-thumb" [src]="track.album.images | noimage" alt=""></td>
+                    <td>{{ track.album.name }}</td>
+                    <td>{{ track.name }}</td>
+                    <td><audio [src]="track.preview_url" controls></audio></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
