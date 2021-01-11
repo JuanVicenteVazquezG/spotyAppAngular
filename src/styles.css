@@ -65,3 +65,8 @@ hr {
 .fadeIn {
     animation-name: fadeIn;
 }
+
+a{
+    text-decoration: none;
+    font-weight: bolder;
+}

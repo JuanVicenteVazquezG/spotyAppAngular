@@ -19,7 +19,7 @@ export class SpotifyService {
       Authorization: this.token,
     });
     return this.http.get(url, { headers });
-  };
+  }
 
   getNewReleases(): any {
     return this.getQuery('browse/new-releases/?limit=20').pipe(
@@ -27,9 +27,13 @@ export class SpotifyService {
     );
   }
 
-  getArtist(term: string): any {
+  getArtists(term: string): any {
     return this.getQuery(`search?q=${term}&type=artist&limit=15`).pipe(
       map((_) => _['artists'].items)
     );
+  }
+
+  getArtist(id: string): any{
+    return this.getQuery(`artists/${id}`).pipe(map((_) => _));
   }
 }
