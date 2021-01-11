@@ -15,7 +15,6 @@ export class CardComponent {
   seeArtist = (item: any) => {
     const artistId: string =
       item.type === 'artist' ? item.id : item.artists[0].id;
-    console.log(artistId);
     this.router.navigate(['artist', artistId]);
-  }
+  };
 }
