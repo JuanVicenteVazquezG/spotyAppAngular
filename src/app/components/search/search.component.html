@@ -1,3 +1,7 @@
+<div *ngIf="error" class="alert alert-danger animated fadeIn mt-5">
+    <h3>Error</h3>
+    <p>{{homeErrorMessage}}</p>
+</div>
 <div class="row">
     <div class="col mt-5">
         <input type="text" #term (keyup)="search(term.value)" class="form-control" placeholder="Search artist...">
