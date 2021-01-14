@@ -6,7 +6,7 @@
     <div class="col mt-5">
         <h3>{{ artist.name }}</h3>
         <p>
-            <a [href]="artist.external_urls.spotify" target="_blank">
+            <a href="artist.external_urls['spotify']" target="_blank">
                 Go to the artist page
             </a>
         </p>
@@ -31,7 +31,10 @@
                     <td><img class="img-thumb" [src]="track.album.images | noimage" alt=""></td>
                     <td>{{ track.album.name }}</td>
                     <td>{{ track.name }}</td>
-                    <td><audio [src]="track.preview_url" controls></audio></td>
+                    <td>
+                        <iframe [src]="track.uri | domseguro" width="300" height="80" frameborder="0"
+                            allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
                 </tr>
             </tbody>
         </table>

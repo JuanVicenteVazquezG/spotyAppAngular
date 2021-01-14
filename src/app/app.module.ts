@@ -17,6 +17,7 @@ import { SearchComponent } from './components/search/search.component';
 // Services
 import { SpotifyService } from './services/spotify.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { CardComponent } from './components/card/card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 
@@ -28,6 +29,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     SearchComponent,
     NoimagePipe,
+    DomseguroPipe,
     CardComponent,
     LoadingComponent,
   ],

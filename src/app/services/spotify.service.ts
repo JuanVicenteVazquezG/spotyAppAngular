@@ -8,9 +8,8 @@ import { map } from 'rxjs/operators';
 })
 export class SpotifyService {
   public token =
-    'Bearer BQDTlLRCgh5peNp1vK4G2ITfUATRvMrx1wsdv08JSBd9DsXklArgkvdRGPVR1pAGRbN89UcbYxSajNSmFi4';
+    'Bearer BQBr2bpAcNw6Amvn_B4BygkEDWXcpachneDHK41WiCtJEcD6LNN8PpKsMw_h340j_WMbiCbzofyZ7gkx7Tk';
   constructor(private http: HttpClient) {
-    console.log('Spotify Service ready!');
   }
 
   getQuery = (query: string) => {
@@ -19,7 +18,7 @@ export class SpotifyService {
       Authorization: this.token,
     });
     return this.http.get(url, { headers });
-  };
+  }
 
   getNewReleases(): any {
     return this.getQuery('browse/new-releases/?limit=20').pipe(
